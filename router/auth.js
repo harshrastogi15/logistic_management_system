@@ -1,6 +1,6 @@
 const express = require("express");
-// const bcrypt = require('bcrypt');
-// var jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+var jwt = require('jsonwebtoken');
 // require('dotenv').config();
 // const { body, validationResult } = require("express-validator");
 const User = require("../model/user");
@@ -11,22 +11,25 @@ const router = express.Router();
 router.post(
   "/signup",
   async (req, res) => {
-
+    // console.log(req.body);
     try {
       let user = await User.findOne({ email: req.body.email });
-      // console.log(user);
+      console.log(user);
       if (user) {
         return res.status(400).json({ status: -1 });
       }
       bcrypt.hash(req.body.password, 10, async function (err, hash) {
+        // console.log(hash)
         user = await User.create({
           name: req.body.name,
           email: req.body.email,
           address: req.body.address,
           password: hash,
-          phone: req.body.phone
+          phone: req.body.phone,
+          pincode : req.body.pincode
         })
           .then((user) => {
+            // console.log(user);
             data = {
               id: user._id
             }
@@ -36,7 +39,7 @@ router.post(
           .catch((error) => res.status(400).json({ status: -1 }));
       });
     } catch (error) {
-      res.status(500).json({ status: -2 });
+      res.status(500).json({  error:error, status: -2 });
     }
   }
 );
