@@ -11,15 +11,12 @@ const router = express.Router();
 router.post(
   "/signup",
   async (req, res) => {
-    // console.log(req.body);
     try {
       let user = await User.findOne({ email: req.body.email });
-      console.log(user);
       if (user) {
         return res.status(400).json({ status: -1 });
       }
       bcrypt.hash(req.body.password, 10, async function (err, hash) {
-        // console.log(hash)
         user = await User.create({
           name: req.body.name,
           email: req.body.email,
@@ -74,6 +71,10 @@ router.post(
 
 router.post('/access', jwtaccess, async (req, res) => {
   try {
+    var user = await User.findById(req.userid);
+    if (!user) {
+      return res.status(400).json({ status: -1 });
+    }
     var data = {
       name: user.name,
       email: user.email,
