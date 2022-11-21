@@ -13,6 +13,7 @@ app.use(cors())
 
 
 app.use('/api/auth',require('./router/auth.js'));
+app.use('/api/consignment',require('./router/consignmentbooked.js'));
 
 
 app.get('/',(req,res)=>{

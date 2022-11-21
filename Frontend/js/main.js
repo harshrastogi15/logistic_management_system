@@ -119,3 +119,10 @@ function logout(){
     localStorage.removeItem('user_token');
     location.reload();
 }
+
+function trackidfunction(){
+    id = document.getElementById('trackingId').value;
+    if(id.length==0){return }
+    // console.log(id)
+    window.location.href = `./track.html?search=${id}`
+}

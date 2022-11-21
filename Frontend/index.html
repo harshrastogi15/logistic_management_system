@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>BhagExpress - Logistics Company Website Template</title>
+    <title>BhagExpress - Logistics</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Favicon -->
@@ -11,11 +11,12 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet">
-
+    <link href="./module/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
@@ -24,11 +25,12 @@
 </head>
 
 <body>
-<!-- Navbar Start -->
+    <!-- Navbar Start -->
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
             <a href="index.html" class="navbar-brand ml-lg-3">
-                <h1 class="m-0 display-5 text-uppercase text-primary"><i class="fa fa-solid fa-truck-fast mr-2"></i>BhagExpress</h1>
+                <h1 class="m-0 display-5 text-uppercase text-primary"><i
+                        class="fa fa-solid fa-truck-fast mr-2"></i>BhagExpress</h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -36,19 +38,10 @@
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav m-auto py-0">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="#about" class="nav-item nav-link">About</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="customer.html" class="dropdown-item">Customer Services</a>
-                            <a href="shipper.html" class="dropdown-item">Shipper Services</a>
-                        </div>
-                    </div>
-                    <a href="#prices" class="nav-item nav-link" id="">Prices</a>
-                    <a href="#contact" class="nav-item nav-link">Contact</a>
+                    <a href="./consignmentBook.html" class="nav-item nav-link">Book Consignment</a>
                 </div>
-                <div id="loginUI" >
-                    <a href="./login.html" class="btn btn-primary py-2 px-4 d-none d-lg-block" >Login</a>
+                <div id="loginUI">
+                    <a href="./login.html" class="btn btn-primary py-2 px-4 d-none d-lg-block">Login</a>
                 </div>
                 <div id="logoutUI" style="display: none;">
                     <a href="#" class="btn btn-primary py-2 px-4 d-none d-lg-block" onclick="logout()">Logout</a>
@@ -56,29 +49,30 @@
             </div>
         </nav>
     </div>
-<!-- Navbar End -->
+    <!-- Navbar End -->
     <div style="text-align: center; margin: auto; width: 90%; display: none;" id="userData">
     </div>
 
-<!-- Header Start -->
+    <!-- Header Start -->
     <div class="jumbotron jumbotron-fluid mb-5">
         <div class="container text-center py-5">
             <h1 class="text-primary mb-4">Safe & Faster</h1>
             <h1 class="text-white display-3 mb-5">Logistics Services</h1>
             <div class="mx-auto" style="width: 100%; max-width: 600px;">
                 <div class="input-group">
-                    <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Tracking Id">
+                    <input type="text" id="trackingId" class="form-control border-light" style="padding: 30px;"
+                        placeholder="Tracking Id">
                     <div class="input-group-append">
-                        <button class="btn btn-primary px-3">Track & Trace</button>
+                        <button class="btn btn-primary px-3" onclick="trackidfunction()">Track</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<!-- Header End -->
+    <!-- Header End -->
 
 
-<!-- About Start -->
+    <!-- About Start -->
     <div id="about" class="container-fluid py-5">
         <div class="container">
             <div class="row align-items-center">
@@ -91,16 +85,18 @@
                 <div class="col-lg-7">
                     <h3 class="text-primary text-uppercase font-weight-bold">About Us</h3>
                     <h1 class="mb-4">Trusted & Faster Logistic Service Provider</h1>
-                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
-                    </div>
+                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum
+                        labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos
+                        et erat sed diam duo</p>
                 </div>
             </div>
         </div>
     </div>
-<!-- About End -->
+    </div>
+    <!-- About End -->
 
 
-<!-- Services Start -->
+    <!-- Services Start -->
     <div id="services" class="container-fluid pt-5">
         <div class="container">
             <div class="text-center pb-2">
@@ -139,11 +135,18 @@
                 <div class="col-lg-7 py-5 py-lg-0">
                     <h4 class="text-primary text-uppercase font-weight-bold">Why Choose Us</h4>
                     <h1 class="mb-4">Faster, Safe and Trusted Logistics Services</h1>
-                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum
+                        labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos
+                        et erat sed diam duo</p>
                     <ul class="list-inline">
-                        <li><h6><i class="far fa-dot-circle text-primary mr-3"></i>Best In Industry</h6>
-                        <li><h6><i class="far fa-dot-circle text-primary mr-3"></i>Emergency Services</h6></li>
-                        <li><h6><i class="far fa-dot-circle text-primary mr-3"></i>24/7 Customer Support</h6></li>
+                        <li>
+                            <h6><i class="far fa-dot-circle text-primary mr-3"></i>Best In Industry</h6>
+                        <li>
+                            <h6><i class="far fa-dot-circle text-primary mr-3"></i>Emergency Services</h6>
+                        </li>
+                        <li>
+                            <h6><i class="far fa-dot-circle text-primary mr-3"></i>24/7 Customer Support</h6>
+                        </li>
                     </ul>
                     <a href="" class="btn btn-primary mt-3 py-2 px-4">Learn More</a>
                 </div>
@@ -152,67 +155,6 @@
     </div>
     <!-- Features End -->
 
-
-    <!-- Pricing Plan Start -->
-    <div id="prices" class="container-fluid pt-5">
-        <div class="container">
-            <div class="text-center pb-2">
-                <h4 class="text-primary text-uppercase font-weight-bold">Pricing Plan</h4>
-                <h1 class="mb-4">Affordable Pricing Packages</h1>
-            </div>
-            <div class="row">
-                <div class="col-md-4 mb-5">
-                    <div class="bg-secondary">
-                        <div class="text-center p-4">
-                            <h1 class="display-4 mb-0">
-                                <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;"><i class="fa-solid fa-indian-rupee-sign"></i></small>199<small class="align-bottom text-muted font-weight-medium" style="font-size: 16px; line-height: 40px;">/Mo</small>
-                            </h1>
-                        </div>
-                        <div class="bg-primary text-center p-4">
-                            <h3 class="m-0">Basic</h3>
-                        </div>
-                        <div class="d-flex flex-column align-items-center py-4">
-                            <p>Lorem ipsum dolor sit amet.</p>
-                            <a href="" class="btn btn-primary py-2 px-4 my-2">Order Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5">
-                    <div class="bg-secondary">
-                        <div class="text-center p-4">
-                            <h1 class="display-4 mb-0">
-                                <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;"><i class="fa-solid fa-indian-rupee-sign"></i></small>499<small class="align-bottom text-muted font-weight-medium" style="font-size: 16px; line-height: 40px;">/Mo</small>
-                            </h1>
-                        </div>
-                        <div class="bg-primary text-center p-4">
-                            <h3 class="m-0">Premium</h3>
-                        </div>
-                        <div class="d-flex flex-column align-items-center py-4">
-                            <p>Lorem ipsum dolor sit amet.</p>
-                            <a href="" class="btn btn-primary py-2 px-4 my-2">Order Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5">
-                    <div class="bg-secondary">
-                        <div class="text-center p-4">
-                            <h1 class="display-4 mb-0">
-                                <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;"><i class="fa-solid fa-indian-rupee-sign"></i></small>999<small class="align-bottom text-muted font-weight-medium" style="font-size: 16px; line-height: 40px;">/Mo</small>
-                            </h1>
-                        </div>
-                        <div class="bg-primary text-center p-4">
-                            <h3 class="m-0">Business</h3>
-                        </div>
-                        <div class="d-flex flex-column align-items-center py-4">
-                            <p>Lorem ipsum dolor sit amet.</p>
-                            <a href="" class="btn btn-primary py-2 px-4 my-2">Order Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Pricing Plan End -->
 
 
     <!-- Team Start -->
@@ -232,9 +174,12 @@
                                 <span>Designation</span>
                             </div>
                             <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-linkedin-in"></i></a>
                                 <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
@@ -249,9 +194,12 @@
                                 <span>Designation</span>
                             </div>
                             <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-linkedin-in"></i></a>
                                 <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
@@ -266,9 +214,12 @@
                                 <span>Designation</span>
                             </div>
                             <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-linkedin-in"></i></a>
                                 <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
@@ -283,9 +234,12 @@
                                 <span>Designation</span>
                             </div>
                             <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-linkedin-in"></i></a>
                                 <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
@@ -300,9 +254,12 @@
                                 <span>Designation</span>
                             </div>
                             <div class="team-social d-flex align-items-center justify-content-center bg-primary">
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i
+                                        class="fab fa-linkedin-in"></i></a>
                                 <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
@@ -321,13 +278,16 @@
                 <div class="row">
                     <div class="col-md-6 mb-5">
                         <h3 class="text-primary mb-4">Get In Touch</h3>
-                        <p><i class="fa fa-map-marker-alt mr-2"></i>IIIT Bhagalpur, Inside BCE Campus, Sabour, Bhagalpur, Bihar - 813210 </p>
+                        <p><i class="fa fa-map-marker-alt mr-2"></i>IIIT Bhagalpur, Inside BCE Campus, Sabour,
+                            Bhagalpur, Bihar - 813210 </p>
                         <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
                         <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
                         <div class="d-flex justify-content-start mt-4">
                             <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-social mr-2" href="#"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social mr-2" href="#"><i
+                                    class="fab fa-linkedin-in"></i></a>
                             <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
@@ -336,18 +296,22 @@
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
                             <a class="text-white mb-2" href="#about"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                            <a class="text-white mb-2" href="#services"><i class="fa fa-angle-right mr-2"></i>Our Services</a>
-                            <a class="text-white mb-2" href="#prices"><i class="fa fa-angle-right mr-2"></i>Pricing Plan</a>
+                            <a class="text-white mb-2" href="#services"><i class="fa fa-angle-right mr-2"></i>Our
+                                Services</a>
+                            <a class="text-white mb-2" href="#prices"><i class="fa fa-angle-right mr-2"></i>Pricing
+                                Plan</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5 col-md-6 mb-5">
                 <h3 class="text-primary mb-4">Newsletter</h3>
-                <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu kasd sed ea duo ipsum. Dolor duo eirmod sea justo no lorem est diam</p>
+                <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu
+                    kasd sed ea duo ipsum. Dolor duo eirmod sea justo no lorem est diam</p>
                 <div class="w-100">
                     <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Your Email Address">
+                        <input type="text" class="form-control border-light" style="padding: 30px;"
+                            placeholder="Your Email Address">
                         <div class="input-group-append">
                             <button class="btn btn-primary px-4">Sign Up</button>
                         </div>
@@ -356,10 +320,12 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: #3E3E4E !important;">
-        <div  class="row">
+    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5"
+        style="border-color: #3E3E4E !important;">
+        <div class="row">
             <div class="footerPara col-lg-6 text-center text-md-center mb-3 mb-md-0">
-                <p class="m-0 text-white">&copy; <a href="https://www.iiitbh.ac.in/">IIIT Bhagalpur</a>. All Rights Reserved.</p>
+                <p class="m-0 text-white">&copy; <a href="https://www.iiitbh.ac.in/">IIIT Bhagalpur</a>. All Rights
+                    Reserved.</p>
             </div>
         </div>
     </div>
@@ -372,7 +338,9 @@
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- <script src="./module/jquery/dist/jquery.min.map"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="./module/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
